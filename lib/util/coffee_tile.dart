@@ -1,6 +1,7 @@
 // ignore_for_file: prefer_const_constructors, prefer_const_constructors_in_immutables
 
 import 'package:flutter/material.dart';
+import 'package:like_button/like_button.dart';
 
 class CoffeeTile extends StatelessWidget {
   final String coffeeImagePath;
@@ -49,10 +50,7 @@ class CoffeeTile extends StatelessWidget {
                     SizedBox(
                       height: 4,
                     ),
-                   // Text(
-                   //   'Black',
-                    //  style: TextStyle(color: Colors.blueAccent),
-                   // ),
+                    LikeButton()
                   ],
                 ),
               ),
