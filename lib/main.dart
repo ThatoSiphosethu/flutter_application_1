@@ -20,6 +20,11 @@ class MyApp extends StatelessWidget {
   Widget build(BuildContext context) {
     return MaterialApp(
       debugShowCheckedModeBanner: false,
+      initialRoute: '/',
+      // routes: {
+      //   '/': (context) const FirstScreen(),
+      //    '/': (context) const SecondScreen(),
+      // },
       home: Wrapper(),
       theme: ThemeData(
         brightness: Brightness.dark,

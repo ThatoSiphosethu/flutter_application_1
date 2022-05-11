@@ -1,8 +1,10 @@
 // ignore_for_file: prefer_const_constructors, prefer_const_literals_to_create_immutables
 
-import 'package:firebase_auth/firebase_auth.dart';
+//import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/material.dart';
-import 'package:flutter_application_1/pages/home/cart_page.dart';
+//import 'package:flutter_application_1/pages/home/favorite_page.dart';
+// import 'package:flutter_application_1/pages/home/cart_page.dart';
+// import 'package:flutter_application_1/pages/home/favorite_page.dart';
 import 'package:flutter_application_1/util/coffe_type.dart';
 import 'package:flutter_application_1/util/coffee_tile.dart';
 import 'package:google_fonts/google_fonts.dart';
@@ -15,8 +17,8 @@ class HomePage extends StatefulWidget {
 }
 
 class _HomePageState extends State<HomePage> {
-  //users
-  final user = FirebaseAuth.instance.currentUser!;
+  // //users
+  // final user = FirebaseAuth.instance.currentUser!;
 
   //list of coffees
   final List coffeeTypes = [
@@ -50,58 +52,55 @@ class _HomePageState extends State<HomePage> {
   }
 
   //navigation bottom bar
-  int _selectedIndex = 0;
+  //int _selectedIndex = 0;
 
-  void _navigateBottomBar(int index) {
-    setState(() {
-      _selectedIndex = index;
-    });
-  }
+  // void _navigateBottomBar(int index) {
+  //   setState(() {
+  //     _selectedIndex = index;
+  //   });
+  // }
 
-  //pages
-  final pages = [
-    HomePage(),
-    //Favorite(),
-    CartPage(),
-  ];
+  
 
   @override
   Widget build(BuildContext context) {
     return Scaffold(
       backgroundColor: Colors.black,
-      appBar: AppBar(
-        elevation: 0,
-        backgroundColor: Colors.transparent,
-        leading: MaterialButton(onPressed: () {
-              FirebaseAuth.instance.signOut();
-            },
-            color: Colors.orangeAccent,
-            child: Text('sign out'),
-        ),
-        actions: [
-          Padding(
-            padding: const EdgeInsets.only(right: 25.0),
-            child: Icon(Icons.person,)
-          )
-        ],
-      ),
-      bottomNavigationBar: BottomNavigationBar(
-          currentIndex: _selectedIndex,
-          onTap: _navigateBottomBar,
-          items: [
-            BottomNavigationBarItem(
-              icon: Icon(Icons.home),
-              label: 'Home',
-            ),
-            BottomNavigationBarItem(
-              icon: Icon(Icons.favorite),
-              label: 'Favorite',
-            ),
-            BottomNavigationBarItem(
-              icon: Icon(Icons.shopping_cart),
-              label: 'Cart',
-            ),
-          ]),
+      // appBar: AppBar(
+      //   elevation: 0,
+      //   backgroundColor: Colors.transparent,
+      //   leading: MaterialButton(
+      //     onPressed: () {
+      //       FirebaseAuth.instance.signOut();
+      //     },
+      //     color: Colors.orangeAccent,
+      //     child: Text('sign out'),
+      //   ),
+      //   actions: [
+      //     Padding(
+      //         padding: const EdgeInsets.only(right: 25.0),
+      //         child: Icon(
+      //           Icons.person,
+      //         ))
+      //   ],
+      // ),
+      // bottomNavigationBar: BottomNavigationBar(
+      //     currentIndex: _selectedIndex,
+      //     onTap: _navigateBottomBar,
+      //     items: [
+      //       BottomNavigationBarItem(
+      //         icon: Icon(Icons.home),
+      //         label: 'Home',
+      //       ),
+      //       BottomNavigationBarItem(
+      //         icon: Icon(Icons.favorite),
+      //         label: 'Favorite',
+      //       ),
+      //       BottomNavigationBarItem(
+      //         icon: Icon(Icons.shopping_cart),
+      //         label: 'Cart',
+      //       ),
+      //     ]),
       body: Column(children: [
         //Name
         Padding(
@@ -174,9 +173,20 @@ class _HomePageState extends State<HomePage> {
               coffeePrice: '7.00',
             ),
           ],
-        ))
+        )),
 
+        
         //bottom navbar
+        // _pages[_selectedIndex],
+        // Navigator(
+        //   onGenerateRoute: ((settings) {
+        //     Widget page = HomePage();
+        //     if (settings.name == 'page2') page = FavoritePage();
+        //     return MaterialPageRoute(builder: (_selectedIndex) => page);
+        //   }),
+        // )
+
+
       ]),
     );
   }
